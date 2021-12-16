@@ -29,16 +29,16 @@ function getUserInfo() {
             renderAvatar(res.data)
         },
         //请求不论成功还是失败都会调用compelte回调函数
-        complete: function(res) {
-            console.log(res);
-            /* //在complete回调函数中通过res.responseJSON来获取服务器响应的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                //强制清空token
-                localStorage.removeItem('token');
-                //强制跳转到登录页面身份认证失败！
-                location.href = '/login.html'
-            } */
-        }
+        //complete: function(res) {
+
+        /* //在complete回调函数中通过res.responseJSON来获取服务器响应的数据
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+            //强制清空token
+            localStorage.removeItem('token');
+            //强制跳转到登录页面身份认证失败！
+            location.href = '/login.html'
+        } */
+        // }
     });
 
 }
@@ -46,7 +46,7 @@ function getUserInfo() {
 //渲染用户的头像
 function renderAvatar(user) {
     //获取用户的名称
-    var name = user.nikenmae || user.username;
+    var name = user.nickname || user.username;
     //获取欢迎语
     $('#welcome-msg').html('欢迎&nbsp;&nbsp;' + name);
     //按需渲染用户的头像

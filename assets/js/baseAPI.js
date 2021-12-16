@@ -3,7 +3,7 @@
 //再这个函数中，可以拿到我们给Ajax提供的配置对象
 
 $.ajaxPrefilter(function(options) {
-    console.log(options.url);
+
     options.url = 'http://api-breakingnews-web.itheima.net' + options.url;
     //统一为有权限的请求接口设置headers请求头
     if (options.url.indexOf('/my/') !== -1) {
